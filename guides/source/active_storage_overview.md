@@ -162,7 +162,7 @@ amazon:
   bucket: ""
 ```
 
-Optionally provide client and upload options:
+Optionally provide client and [upload options](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/S3/Object.html#put-instance_method):
 
 ```yaml
 amazon:
@@ -176,6 +176,7 @@ amazon:
   retry_limit: 0
   upload:
     server_side_encryption: "" # 'aws:kms' or 'AES256'
+    storage_class: INTELLIGENT_TIERING # STANDARD REDUCED_REDUNDANCY INTELLIGENT_TIERING STANDARD_IA ONEZONE_IA GLACIER DEEP_ARCHIVE
 ```
 TIP: Set sensible client HTTP timeouts and retry limits for your application. In certain failure scenarios, the default AWS client configuration may cause connections to be held for up to several minutes and lead to request queuing.
 
